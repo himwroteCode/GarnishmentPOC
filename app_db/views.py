@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import JsonResponse
-from .raw_queries import insert_student, delete_student, update_employee_salary, update_detail
+from .raw_queries import insert_student, delete_student, update_student_name  #, update_employee_salary
 
-def add_employee(request):
+def add_student(request):
     # Example data
     
     name = 'Jonna'
@@ -22,17 +22,17 @@ def update_detail(request):
     update_student_name(age, new_name)
     return JsonResponse({'Message' : 'Student name updated successfully'})
 
-def update_salary(request):
-    # Example data
-    age = 45
-    new_name = 'John Satham'
+# def update_salary(request):
+#     # Example data
+#     age = 45
+#     new_name = 'John Satham'
 
-    update_employee_salary(age, new_name)
-    return JsonResponse({'message': 'Employee salary updated successfully'})
+#     update_employee_salary(age, new_name)
+#     return JsonResponse({'message': 'Employee salary updated successfully'})
 
 def remove_student(request):
     # Example data
     age = 25
 
     delete_student(age)
-    return JsonResponse({'message': 'Employee deleted successfully'})
+    return JsonResponse({'message': 'Student deleted successfully'})

@@ -5,10 +5,15 @@ def insert_student(name, age, email):
     with connection.cursor() as cursor:
         cursor.execute(query, [name, age, email])
 
-def update_employee_salary(age, new_name):
+def update_student_name(age, new_name):
     query = "UPDATE app_db_student SET name = %s WHERE age = %s"
     with connection.cursor() as cursor:
         cursor.execute(query, [new_name, age])
+
+# def update_employee_salary(age, new_name):
+#     query = "UPDATE app_db_student SET name = %s WHERE age = %s"
+#     with connection.cursor() as cursor:
+#         cursor.execute(query, [new_name, age])
 
 def delete_student(emp_code):
     query = "DELETE FROM app_db_student WHERE age = %s"
